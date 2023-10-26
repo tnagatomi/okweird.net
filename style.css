@@ -103,8 +103,5 @@ blockquote {
     display: flex;
     flex-basis: auto;
     align-items: center;
-}
-
-.github-word {
-    margin-left: 0.5rem;
+    gap: 0.5rem
 }
