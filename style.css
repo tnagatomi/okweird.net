@@ -104,3 +104,8 @@ blockquote {
     align-items: center;
     gap: 0.5rem
 }
+
+.github-icon {
+    display: flex;
+    align-items: center;
+}
