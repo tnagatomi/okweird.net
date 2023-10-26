@@ -103,7 +103,6 @@ blockquote {
     display: flex;
     flex-basis: auto;
     align-items: center;
-    justify-content: start;
 }
 
 .github-word {
