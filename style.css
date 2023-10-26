@@ -74,20 +74,9 @@ pre > code {
 blockquote {
     border: 1px solid #999;
     color: #222;
-    padding: 2px 0px 2px 20px;
-    margin: 0px;
+    padding: 2px 0 2px 20px;
+    margin: 0;
     font-style: italic;
-}
-
-.social-icons {
-    display: flex;
-    padding-left: 0;
-    align-items: center;
-    list-style-type: none;
-}
-
-.social-icons li {
-    margin-left: 1rem;
 }
 
 .profile {
@@ -108,4 +97,15 @@ blockquote {
 
 .profile-body p {
     margin: 0.5rem 0 0.5rem 0;
+}
+
+.github-link {
+    display: flex;
+    flex-basis: auto;
+    align-items: center;
+    justify-content: start;
+}
+
+.github-word {
+    margin-left: 0.5rem;
 }
