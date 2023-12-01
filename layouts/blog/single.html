@@ -1,0 +1,7 @@
+{{ define "main" }}
+<h2 id="title">{{ .Title }}</h2>
+Date: {{ .Date.Format "2006-01-02" }}
+{{ .Content }}
+<hr>
+{{ partial "profile" . }}
+{{ end }}

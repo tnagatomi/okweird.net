@@ -1,0 +1,10 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="It's okay to be weird"/>
+    <meta name="description" content="Takayuki Nagatomi's personal site"/>
+    <link rel="icon" type="image/png" href="/okweird.png"/>
+    {{ $style := resources.Get "css/style.css" | minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" type="text/css" media="screen">
+    <title>{{ or .Title .Site.Title }}{{ if ne .Kind "home" }} - {{ .Site.Title }}{{ end }}</title>
+</head>
