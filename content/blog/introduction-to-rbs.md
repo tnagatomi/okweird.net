@@ -4,7 +4,7 @@ date = 2023-12-08T08:48:00+09:00
 draft = false
 +++
 
-## この記事の概要
+### この記事の概要
 
 これは[SmartHR Advent Calendar 2023](https://qiita.com/advent-calendar/2023/smarthr)シリーズ 1の8日目の記事です。
 
@@ -12,7 +12,7 @@ draft = false
 
 sinsokuさんの[Railsアプリと型検査](https://speakerdeck.com/sinsoku/rails-app-and-type-checking)というスライドを見て、そんな形で型定義の導入ができるのか、となったことがきっかけで試してみたことです。ありがとうございます。
 
-## RBSとは
+### RBSとは
 
 RBSを含めたRubyの静的解析機能周りについては[Ruby 3の静的解析機能のRBS、TypeProf、Steep、Sorbetの関係についてのノート - クックパッド開発者ブログ](https://techlife.cookpad.com/entry/2020/12/09/120454)に短くまとまっています。  
 これによると、RBSはその言語を主体とした4種類からなる「型を扱うための基盤」と言えるようです。
@@ -30,7 +30,7 @@ RBSを含めたRubyの静的解析機能周りについては[Ruby 3の静的解
 
 この講演では後半でRBSの小さな始め方についても触れられているので、興味のある方はぜひ動画を観てみてください。
 
-## 実際に既存のRuby on Railsプロジェクトに導入する
+### 実際に既存のRuby on Railsプロジェクトに導入する
 
 RBSが何なのかぼんやり分かったところで、さっそく既存のRuby on Railsプロジェクトに導入してみましょう。
 
@@ -39,7 +39,7 @@ Steepは型違反のチェック機能なども持っていますが、ここで
 
 冒頭で挙げた[sinsokuさんのスライド](https://speakerdeck.com/sinsoku/rails-app-and-type-checking)と、そちらで紹介されていた[Railsプロジェクトへの「頑張らない型導入」のすすめ - メドピア開発者ブログ](https://tech.medpeer.co.jp/entry/2023-small-rbs-introduce)を存分に参考にします。
 
-### Steepをセットアップ
+#### Steepをセットアップ
 
 まずはSteepをセットアップします。
 
@@ -75,7 +75,7 @@ end
 `configure_code_diagnostics(D::Ruby.silent)` が重要で、型のエラーチェックをしないようにします。何もしない状態だと既存のコードに対してエラーが溢れるので、それを防止します。
 本当はエラーチェックもできると良いのですが（型はそのためにあるとも言えそうです）、今回は痛みなくという方針なので頑張らずに無視します。
 
-### rbs_rails gemをセットアップ
+#### rbs_rails gemをセットアップ
 
 [rbs_rails](https://github.com/pocke/rbs_rails)とはRuby on Rails用のRBSファイルジェネレーターです。
 
@@ -91,7 +91,7 @@ end
 `bin/rails g rbs_rails:install` を実行します。`lib/tasks/rbs.rake` が作成されます。  
 いったんここまでにしておきます。
 
-### rbs collectionのセットアップ
+#### rbs collectionのセットアップ
 
 [rbs collection](https://github.com/ruby/rbs/blob/master/docs/collection.md)はサードパーティgemのRBSを生成してくれる便利なツールです。
 
@@ -104,7 +104,7 @@ end
 `bundle exec rbs collection init` を実行します。  
 `rbs_collection.yaml` が作成されます。これは書き換えずにこのまま利用します。
 
-### rbs.rakeの調整
+#### rbs.rakeの調整
 
 `bin/rails g rbs_rails:install` で作られた `rbs.rake` をこのように書き換えます:
 
@@ -148,7 +148,7 @@ end
 
 これでRBSファイル生成の準備ができました！
 
-### RBSファイルの生成
+#### RBSファイルの生成
 
 さて、ここまででセットアップが終わったので、いよいよRBSファイルの生成を行います。  
 その前に、`.gitignore` に無視対象になるRBSファイルなどを追加しておきます。  
@@ -174,7 +174,7 @@ rbs_collection.lock.yaml
 
 Visual Studio Codeの設定をしてみましょう。
 
-### Visual Studio Codeの設定
+#### Visual Studio Codeの設定
 
 [公式Steep拡張](https://marketplace.visualstudio.com/items?itemName=soutaro.steep-vscode)をインストールしてSteepの機能を有効にしましょう。  
 プロジェクトを開いていた場合は有効化後にもう一度開き直すと良いようです。
@@ -199,7 +199,7 @@ Visual Studio Codeの設定をしてみましょう。
 
 これでRuby on RailsプロジェクトへのRBSの傷みのない導入はひとまず完了です。
 
-## あとがき
+### あとがき
 
 RBSの概要の紹介と実際のRuby on Railsプロジェクトへの導入について書いてみました。
 
