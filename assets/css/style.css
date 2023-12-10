@@ -10,8 +10,6 @@ body {
     max-width: 65ch;
     text-align: left;
     background-color: #fff;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
     line-height: 1.5;
     color: #444;
 }
@@ -33,7 +31,6 @@ b {
     color: #222;
 }
 a {
-    display: inline-block;
     text-decoration: none;
     color: #3273dc;
 }
