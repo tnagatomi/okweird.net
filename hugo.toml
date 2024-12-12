@@ -1,3 +1,8 @@
 baseURL = 'https://okweird.net/'
 languageCode = 'ja-jp'
 title = "It's okay to be weird"
+
+[params]
+  title = "It's okay to be weird"
+  description = "Takayuki Nagatomi's site"
+  images = ["okweird.png"]
