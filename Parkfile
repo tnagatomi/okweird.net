@@ -1,0 +1,19 @@
+ENV["RAILS_ENV"] = "production"
+ENV["RACK_ENV"] = "production"
+
+require 'parklife/rails'
+require_relative 'config/environment'
+
+Parklife.application.configure do |config|
+  config.nested_index = false
+end
+
+Parklife.application.routes do
+  root crawl: true
+
+  get "/index.xml"
+  get "/sitemap.xml"
+  get "/robots.txt"
+
+  get "/404.html"
+end
