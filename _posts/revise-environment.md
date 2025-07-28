@@ -8,7 +8,7 @@ draft: false
 
 それでまずは6年前に読んだ実践Vim（の英語改訂版）を読み返した。プラグインの機能はほとんど使用せずに様々な操作が可能なことを教えてくれるこの本はVim wayを知る上で本当にいい本だと思う。新たな学びもあったけど、ふとした時に出てくる自信のない操作も多い（マクロとか）。
 
-あとはVimを使った開発の動画を観たりした。良かったのはこの2本: [tmuxとvimによる開発作業フロー (動画) | 週休７日で働きたい](https://blog.craftz.dog/my-dev-workflow-using-tmux-vim-48f73cc4f39e)、 [【解説】開発ライブ実況 #1 (Vim / Go) 編 by メルペイ Architect チーム Backend エンジニア #mercari_codecast | メルカリエンジニアリング](https://engineering.mercari.com/blog/entry/mercari_codecast_1/)。特にメルカリの方のやつは作業が速すぎてRTSのプロゲーマーを観ているようだった。
+あとはVimを使った開発の動画を観たりした。良かったのはこの2本: [tmuxとvimによる開発作業フロー (動画) \| 週休７日で働きたい](https://blog.craftz.dog/my-dev-workflow-using-tmux-vim-48f73cc4f39e)、 [【解説】開発ライブ実況 #1 (Vim / Go) 編 by メルペイ Architect チーム Backend エンジニア #mercari_codecast \| メルカリエンジニアリング](https://engineering.mercari.com/blog/entry/mercari_codecast_1/)。特にメルカリの方のやつは作業が速すぎてRTSのプロゲーマーを観ているようだった。
 
 んでそのままの勢いに実践Vimと同じ著者が書いたVim 8とNeovimについての[Modern Vim](https://pragprog.com/titles/modvim/modern-vim/)を買って読んだ。といっても "Craft Your Development Environment" と副題がついているように、開発環境向けの機能やプラグインの紹介が多く、僕の利用目的とは合わない感じだったのでそういうプラグインもあるんだな、Neovimにはそういう機能があるのねー、程度にざっと読んだ。
 
