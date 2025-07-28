@@ -182,13 +182,13 @@ Visual Studio Codeの設定をしてみましょう。
 さてどうなっているでしょうか。
 
 この拡張を有効化する前は `Date` で `.current` が補完できてなかったのが…  
-![Date.current補完ビフォー](/images/blog/introduction-to-rbs/date_current_before.png)
+![Date.current補完ビフォー](/uploads/blog/introduction-to-rbs/date_current_before.png)
 
 できるようになった！  
-![Date.current補完アフター](/images/blog/introduction-to-rbs/date_current_after.png)
+![Date.current補完アフター](/uploads/blog/introduction-to-rbs/date_current_after.png)
 
 さらにクラスにカーソルを当てるとこういうドキュメントも出るようになった！  
-![Dateクラスのドキュメントのポップアップ](/images/blog/introduction-to-rbs/date_class_document.png)
+![Dateクラスのドキュメントのポップアップ](/uploads/blog/introduction-to-rbs/date_class_document.png)
 
 これだけでもRBSを導入した甲斐があるというものではないでしょうか。
 
