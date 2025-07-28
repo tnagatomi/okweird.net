@@ -26,5 +26,11 @@ module Okweird
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.middleware.use Rack::Static,
+                          urls: [ "/uploads" ],
+                          root: Rails.root.to_s,
+                          header_rules: [
+                            [ :all, { "Cache-Control" => "public, max-age=15552000" } ]
+                          ]
   end
 end
