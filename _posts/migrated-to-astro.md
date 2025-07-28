@@ -9,6 +9,6 @@ draft: false
 記述も楽だし、サイトは速いし、Vercelでのデプロイも一瞬だし、いい感じです。  
 Gatsbyは自分のブログには少しオーバースペックな感じでした。
 
-デザインは公式の[Blog | Astro](https://astro.build/themes/details/blog/)テーマほぼそのままですが、読むのにフォーカスできていい感じになったかなと思ってます。
+デザインは公式の[Blog \| Astro](https://astro.build/themes/details/blog/)テーマほぼそのままですが、読むのにフォーカスできていい感じになったかなと思ってます。
 
 ではでは、これからもこのブログをどうぞよろしくお願いします。
