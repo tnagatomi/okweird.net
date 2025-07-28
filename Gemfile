@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem "parklife"
 gem "rails", "~> 8.0.2"
 
 gem "propshaft"
