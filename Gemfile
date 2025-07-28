@@ -3,6 +3,8 @@ source "https://rubygems.org"
 gem "parklife"
 gem "rails", "~> 8.0.2"
 
+gem "front_matter_parser"
+gem "kramdown-parser-gfm"
 gem "propshaft"
 gem "puma", ">= 5.0"
 gem "importmap-rails"
@@ -15,10 +17,6 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false
   gem "rubocop-rails-omakase", require: false
-end
-
-group :development do
-  gem "web-console"
 end
 
 group :test do

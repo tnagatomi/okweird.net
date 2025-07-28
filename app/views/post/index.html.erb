@@ -1,0 +1,9 @@
+<h2>Blog</h2>
+<ul>
+  <% @posts.each do |post|%>
+  <li>
+    <% pp post %>
+    <a href="<%= post_path(post) %>"><%= post.published_at.to_date %> <%= post.title %></a>
+  </li>
+  <% end %>
+</ul>
