@@ -5,7 +5,7 @@ class SitemapController < ApplicationController
     @entries = []
 
     @entries << SitemapEntry.new(loc: root_url)
-    @entries << SitemapEntry.new(loc: history_index_url)
+    @entries << SitemapEntry.new(loc: history_url)
     @entries << SitemapEntry.new(loc: posts_url)
     @entries += Post.all.sort_by(&:published_at).map do |post|
       SitemapEntry.new(loc: post_url(post))
