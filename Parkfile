@@ -5,7 +5,7 @@ require 'parklife/rails'
 require_relative 'config/environment'
 
 Parklife.application.configure do |config|
-  config.nested_index = false
+  config.nested_index = true
 end
 
 Parklife.application.routes do
