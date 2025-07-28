@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   get "blog/index", to: "post#index"
   get "blog/:slug", to: "posts#show", as: :post, constraints: { slug: /[a-z0-9\-_]+/ }
+
+  get "history/index"
 end

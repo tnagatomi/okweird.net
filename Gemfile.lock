@@ -311,6 +311,7 @@ DEPENDENCIES
   debug
   front_matter_parser
   importmap-rails
+  kramdown
   kramdown-parser-gfm
   parklife
   propshaft

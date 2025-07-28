@@ -4,6 +4,7 @@ gem "parklife"
 gem "rails", "~> 8.0.2"
 
 gem "front_matter_parser"
+gem "kramdown"
 gem "kramdown-parser-gfm"
 gem "propshaft"
 gem "puma", ">= 5.0"
