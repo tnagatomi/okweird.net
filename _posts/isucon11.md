@@ -1,8 +1,8 @@
-+++
-title = 'ISUCON11でISUCONに初参加した'
-date = 2021-08-23T08:54:00+09:00
-draft = false
-+++
+---
+title: ISUCON11でISUCONに初参加した
+date: '2021-08-23T08:54:00+09:00'
+draft: false
+---
 
 ISUCON11に同僚の [@akht_ikd](https://twitter.com/akht_ikd) と2人チーム「team”渇き”」として出場した。  
 結果としては58450点の58位で予選落ちだった。

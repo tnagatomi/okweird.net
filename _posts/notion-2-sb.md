@@ -1,8 +1,8 @@
-+++
-title = '単一NotionページをScrapboxページ用テキストに変換するNode.jsツール、notion2sbを作った'
-date = 2023-01-10T21:00:00+09:00
-draft = false
-+++
+---
+title: 単一NotionページをScrapboxページ用テキストに変換するNode.jsツール、notion2sbを作った
+date: '2023-01-10T21:00:00+09:00'
+draft: false
+---
 
 最近はGoのCLIツールを[作ったり](https://okweird.net/blog/first-go-oss-product)、[学んだり](https://okweird.net/blog/powerful-go-cli-app)するのが一番楽しいと思う今日この頃なのですが、ふとNode.jsとTypeScriptでもCLIツールを作れないかと思い立ちました。
 

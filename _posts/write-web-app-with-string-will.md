@@ -1,8 +1,8 @@
-+++
-title = 'const writeWebAppWithStrongWill = true;'
-date = 2021-04-06T21:55:00+09:00
-draft = false
-+++
+---
+title: const writeWebAppWithStrongWill = true;
+date: '2021-04-06T21:55:00+09:00'
+draft: false
+---
 
 同僚たちと毎週夜にCode Completeの読書会をやっているのだけど、本編自体は早めに終わったあと、僕の「雑談いいですか？」という一言から、仕事とプライベートでやっていることについて色んな話をした。
 

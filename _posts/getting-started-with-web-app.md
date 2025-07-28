@@ -1,8 +1,8 @@
-+++
-title = '個人Webアプリ作成という荒野に立った'
-date = 2021-04-13T23:14:00+09:00
-draft = false
-+++
+---
+title: 個人Webアプリ作成という荒野に立った
+date: '2021-04-13T23:14:00+09:00'
+draft: false
+---
 
 [const writeWebAppWithStrongWill = true;](https://okweird.net/blog/write-web-app-with-string-will/) で宣言したとおり、Webアプリ作りに着手している。
 

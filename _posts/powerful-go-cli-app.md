@@ -1,8 +1,8 @@
-+++
-title = '書籍『Powerful Command-Line Applications in Go』でGoによるCLIツール作成のための「パワー！」をもらった'
-date = 2022-12-21T15:57:00+09:00
-draft = false
-+++
+---
+title: 書籍『Powerful Command-Line Applications in Go』でGoによるCLIツール作成のための「パワー！」をもらった
+date: '2022-12-21T15:57:00+09:00'
+draft: false
+---
 
 この記事は[🎅GMOペパボエンジニア Advent Calendar 2022](https://adventar.org/calendars/7722)の21日目の記事です。
 

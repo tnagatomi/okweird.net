@@ -1,8 +1,8 @@
-+++
-title = 'ブログをAstroに移行した'
-date = 2022-12-21T19:45:00+09:00
-draft = false
-+++
+---
+title: ブログをAstroに移行した
+date: '2022-12-21T19:45:00+09:00'
+draft: false
+---
 
 個人的に尊敬しているRyosuke IWANAGAさんによるブログ記事、[カナダで自分の会社を作ってみた - As a Futurist...](https://blog.riywo.com/2022/10/founded-my-company-in-canada/)で見かけたAstro（公式サイトによるとall-in-one web framework）が気になったので、Gatsbyからガッと移行してみたら簡単に移行できました。
 

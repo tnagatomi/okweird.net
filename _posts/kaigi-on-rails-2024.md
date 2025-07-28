@@ -1,7 +1,7 @@
-+++
-title = 'Kaigi on Rails 2024に参加した'
-date = 2024-10-29T13:35:00+09:00
-+++
+---
+title: Kaigi on Rails 2024に参加した
+date: '2024-10-29T13:35:00+09:00'
+---
 
 2024/10/25(金)、10/26(土)の2日間に渡って東京の有明で行われた[Kaigi on Rails 2024](https://kaigionrails.org/2024/)に参加した。
 

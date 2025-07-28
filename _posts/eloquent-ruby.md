@@ -1,8 +1,8 @@
-+++
-title = '『Eloquent Ruby』でRubyistになるための文化を吸収できた気がする'
-date = 2023-09-23T11:10:09+09:00
-draft = false
-+++
+---
+title: "『Eloquent Ruby』でRubyistになるための文化を吸収できた気がする"
+date: '2023-09-23T11:10:09+09:00'
+draft: false
+---
 
 『Eloquent Ruby』という[Russ Olsen](http://russolsen.com/)によるRubyについての本を読みました。  
 https://www.amazon.co.jp/dp/0321584104

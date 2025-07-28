@@ -1,8 +1,8 @@
-+++
-title = '『Clean Coder』を読んだ ― ボブおじさんに学ぶプロの職業倫理'
-date = 2022-04-03T11:03:00+09:00
-draft = false
-+++
+---
+title: "『Clean Coder』を読んだ ― ボブおじさんに学ぶプロの職業倫理"
+date: '2022-04-03T11:03:00+09:00'
+draft: false
+---
 
 ソフトウェア・エキスパートであるRobert C. Martinことボブおじさんによる『Clean Coder』を読みました。
 

@@ -1,8 +1,8 @@
-+++
-title = 'Gatsbyをv3にアップグレードしてgatsby-blog-starterもアップグレードした'
-date = 2021-03-11T17:30:00+09:00
-draft = false
-+++
+---
+title: Gatsbyをv3にアップグレードしてgatsby-blog-starterもアップグレードした
+date: '2021-03-11T17:30:00+09:00'
+draft: false
+---
 
 表題のとおりです。
 

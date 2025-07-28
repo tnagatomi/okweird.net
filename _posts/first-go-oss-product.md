@@ -1,8 +1,8 @@
-+++
-title = '初めてのGo製CLIツール作成、初めてのOSS公開に込められた物語'
-date = 2021-12-15T08:00:00+09:00
-draft = false
-+++
+---
+title: 初めてのGo製CLIツール作成、初めてのOSS公開に込められた物語
+date: '2021-12-15T08:00:00+09:00'
+draft: false
+---
 
 この記事は[GMOペパボエンジニア Advent Calendar 2021](https://adventar.org/calendars/6375)の15日目の記事です。
 
