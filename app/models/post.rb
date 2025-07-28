@@ -23,7 +23,7 @@ class Post < ApplicationModel
   end
 
   def content
-    @_content ||= markdownify(body)
+    @_content ||= Kramdown::Document.new(body, input: "GFM").to_html.html_safe
   end
 
   def published_at
