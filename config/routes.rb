@@ -7,8 +7,6 @@ Rails.application.routes.draw do
     route_for :slugged_post, { year: post.published_at.strftime("%Y"), month: post.published_at.strftime("%m"), slug: post.slug }.merge(options)
   end
 
-  get "blog/:slug", to: "posts#redirect", constraints: { slug: /.*/ }
-
   get "history", to: "history#index", as: :history
 
   get "index", to: "feed#index", as: :feed, format: :xml
