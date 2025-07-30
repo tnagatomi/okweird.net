@@ -14,6 +14,10 @@ class Post < ApplicationModel
     new(filepath: path, frontmatter: parsed.front_matter, body: parsed.content)
   end
 
+  def slug
+    @_slug ||= raw_slug.downcase
+  end
+
   def filename
     File.basename(filepath, ".*")
   end
@@ -30,7 +34,9 @@ class Post < ApplicationModel
     @_published_at ||= Time.zone.parse(frontmatter["date"])
   end
 
-  def to_param
-    filename
+  private
+
+  def raw_slug
+    filename.split("-", 4).last
   end
 end
