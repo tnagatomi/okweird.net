@@ -24,6 +24,7 @@ if [ -d public ]; then
 fi
 
 if [ -d uploads ]; then
+  mkdir -p build/uploads
   cp -R uploads/* build/uploads
 fi
 
