@@ -16,4 +16,9 @@ Parklife.application.routes do
   get "/robots.txt"
 
   get "/404.html"
+
+  # Generate redirect pages for old URLs
+  Post.all.each do |post|
+    get "/blog/#{post.slug}"
+  end
 end

@@ -3,11 +3,10 @@ Rails.application.routes.draw do
 
   get "blog", to: "posts#index", as: :posts
   get "blog/:year/:month/:slug", to: "posts#show", as: :slugged_post, constraints: { year: /\d{4}/, month: /\d{2}/, slug: /.*/, format: /html/ }
+  get "blog/:slug", to: "redirects#index", constraints: { slug: /.*/ }
   direct :post do |post, options|
     route_for :slugged_post, { year: post.published_at.strftime("%Y"), month: post.published_at.strftime("%m"), slug: post.slug }.merge(options)
   end
-
-  get "blog/:slug", to: "posts#redirect", constraints: { slug: /.*/ }
 
   get "history", to: "history#index", as: :history
 
