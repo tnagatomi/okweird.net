@@ -12,13 +12,21 @@ Parklife.application.routes do
   root crawl: true
 
   get "/index.xml"
+  get "/feed.xml"
+  get "/ja/feed.xml"
   get "/sitemap.xml"
   get "/robots.txt"
 
   get "/404.html"
 
   # Generate redirect pages for old URLs
+  get "/blog"
+
   Post.all.each do |post|
+    year = post.published_at.strftime("%Y")
+    month = post.published_at.strftime("%m")
+
     get "/blog/#{post.slug}"
+    get "/blog/#{year}/#{month}/#{post.slug}"
   end
 end
