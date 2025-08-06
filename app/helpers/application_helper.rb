@@ -2,11 +2,17 @@ module ApplicationHelper
   def language_switch_links
     if I18n.locale == :ja
       content_tag(:span, class: "language-switcher") do
-        link_to("en", switch_locale_path(:en), class: "other-lang") + " / " + content_tag(:span, "ja", class: "current-lang")
+        safe_join([
+          link_to("en", switch_locale_path(:en), class: "other-lang"),
+          content_tag(:span, "ja", class: "current-lang")
+        ], " / ")
       end
     else
       content_tag(:span, class: "language-switcher") do
-        content_tag(:span, "en", class: "current-lang") + " / " + link_to("ja", switch_locale_path(:ja), class: "other-lang")
+        safe_join([
+          content_tag(:span, "en", class: "current-lang"),
+          link_to("ja", switch_locale_path(:ja), class: "other-lang")
+        ], " / ")
       end
     end
   end
