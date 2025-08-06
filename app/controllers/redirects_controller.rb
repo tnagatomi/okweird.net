@@ -9,4 +9,24 @@ class RedirectsController < ApplicationController
       raise ActionController::RoutingError, "Not Found"
     end
   end
+
+  def blog_index
+    @redirect_url = ja_posts_path(locale: :ja)
+    render :redirect, layout: false
+  end
+
+  def blog_post
+    @redirect_url = ja_slugged_post_path(
+      locale: :ja,
+      year: params[:year],
+      month: params[:month],
+      slug: params[:slug]
+    )
+    render :redirect, layout: false
+  end
+
+  def feed_legacy
+    @redirect_url = "/ja/feed.xml"
+    render :redirect, layout: false
+  end
 end
