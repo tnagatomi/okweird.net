@@ -18,13 +18,16 @@
   </head>
 
   <header>
-    <a href="/">
+    <a href="<%= localized_root_path %>">
         <h1>It's okay to be weird</h1>
     </a>
-    <nav>
-        <a href="<%= root_path %>">About</a>
-        <a href="<%= posts_path %>">Blog</a>
-        <a href="<%= history_path %>">History</a>
+    <nav style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <a href="<%= localized_root_path %>">About</a>
+          <a href="<%= localized_posts_path %>">Blog</a>
+          <a href="<%= localized_history_path %>">History</a>
+        </div>
+        <%= language_switch_links %>
     </nav>
   </header>
 

@@ -9,9 +9,21 @@ class Post < ApplicationModel
     end
   end
 
+  def self.japanese
+    all.select { |post| post.language == :ja }
+  end
+
+  def self.english
+    all.select { |post| post.language == :en }
+  end
+
   def self.from_file(path)
     parsed = FrontMatterParser::Parser.parse_file(path)
     new(filepath: path, frontmatter: parsed.front_matter, body: parsed.content)
+  end
+
+  def language
+    filepath.include?("/_posts/ja/") ? :ja : :en
   end
 
   def slug
