@@ -21,7 +21,7 @@ class RedirectsController < ApplicationController
   end
 
   def feed_legacy
-    @redirect_url = ja_feed_url(format: :xml, locale: :ja)
+    @redirect_url = "/ja/feed.xml"
     render :redirect, layout: false, formats: [ :html ]
   end
 end
