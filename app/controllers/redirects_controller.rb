@@ -3,8 +3,8 @@ class RedirectsController < ApplicationController
     slug_param = params[:slug].sub(/\.[^.]*\z/, "")
     @post = Post.all.find { |post| post.slug == slug_param }
     if @post
-      @redirect_url = post_path(@post)
-      render layout: false
+      @redirect_url = "/ja/blog/#{@post.published_at.strftime("%Y")}/#{@post.published_at.strftime("%m")}/#{@post.slug}/"
+      render :redirect, layout: false
     else
       raise ActionController::RoutingError, "Not Found"
     end
