@@ -33,12 +33,12 @@ Rails.application.routes.draw do
 
   # English feed
   get "feed", to: "feed#index", as: :feed, format: :xml, defaults: { format: :xml }
-  
-  # Japanese feed  
+
+  # Japanese feed
   scope ":locale", locale: /ja/ do
     get "feed", to: "feed#index", as: :ja_feed, format: :xml, defaults: { format: :xml }
   end
-  
+
   # Legacy feed redirect
   get "index", to: "redirects#feed_legacy"
 

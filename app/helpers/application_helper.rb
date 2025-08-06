@@ -13,7 +13,7 @@ module ApplicationHelper
 
   def switch_locale_path(locale)
     current = request.path
-    
+
     if locale == :ja
       return "/ja/" if current == "/"
       return "/ja/blog/" if current == "/posts/" || current == "/posts"
