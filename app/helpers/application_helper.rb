@@ -18,12 +18,18 @@ module ApplicationHelper
       return "/ja/" if current == "/"
       return "/ja/blog/" if current == "/posts/" || current == "/posts"
       return "/ja/history/" if current == "/history/" || current == "/history"
+      if current.match?(/^\/posts\/\d{4}\/\d{2}\//)
+        return "/ja/blog/"
+      end
       return "/ja#{current}" unless current.start_with?("/ja/")
       current
     else
       return "/" if current == "/ja/" || current == "/ja"
       return "/posts/" if current == "/ja/blog/" || current == "/ja/blog"
       return "/history/" if current == "/ja/history/" || current == "/ja/history"
+      if current.match?(/^\/ja\/blog\/\d{4}\/\d{2}\//)
+        return "/posts/"
+      end
       current.sub(/^\/ja/, "").presence || "/"
     end
   end
