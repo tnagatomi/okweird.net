@@ -2,26 +2,26 @@ require "rails_helper"
 
 RSpec.describe "Redirects", type: :system do
   describe "legacy blog URLs" do
-    it "shows redirect page for /blog" do
-      visit "/blog/"
-      expect(page).to have_content("Redirecting")
-      expect(page).to have_link(href: "/ja/blog/")
-      expect(page).to have_css('meta[http-equiv="refresh"]', visible: false)
+    it "redirects /blog to Japanese blog" do
+      visit "/blog"
+      expect(page).to have_current_path("/ja/blog/")
+      expect(page).to have_css("h2", text: "Blog")
+      expect(page).to have_content("Claude Codeで生成した")
     end
 
-    it "shows redirect page for /blog posts" do
-      visit "/blog/2025/08/how-i-abandoned-claude-code-generated-oss/"
-      expect(page).to have_content("Redirecting")
-      expect(page).to have_link(href: "/ja/blog/2025/08/how-i-abandoned-claude-code-generated-oss/")
+    it "redirects /blog posts to Japanese version" do
+      visit "/blog/2025/08/how-i-abandoned-claude-code-generated-oss"
+      expect(page).to have_current_path("/ja/blog/2025/08/how-i-abandoned-claude-code-generated-oss/")
+      expect(page).to have_css("h2", text: "Claude Codeで生成した「動く」OSSのフレームワークを公開せずに捨てた話")
+      expect(page).to have_content("Agentic coding全盛のいま")
     end
   end
 
   describe "legacy feed URL" do
-    it "shows redirect page for /index.xml" do
+    it "redirects /index.xml to Japanese feed" do
       visit "/index.xml"
-      expect(page).to have_content("Redirecting")
-      expect(page).to have_link(href: "/ja/feed.xml")
-      expect(page).to have_css('meta[http-equiv="refresh"]', visible: false)
+      # Since feeds are XML, we check that we end up at the Japanese feed URL
+      expect(page).to have_current_path("/ja/feed.xml")
     end
   end
 end
