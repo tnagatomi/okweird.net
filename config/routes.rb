@@ -38,9 +38,7 @@ Rails.application.routes.draw do
   scope ":locale", locale: /ja/ do
     get "feed", to: "feed#index", as: :ja_feed, format: :xml, defaults: { format: :xml }
   end
-
-  # Legacy feed redirect
-  get "index", to: "redirects#feed_legacy"
+  get "index", to: "feed#index", format: :xml, defaults: { format: :xml, locale: :ja }
 
   get "sitemap", to: "sitemap#index", as: :sitemap, format: :xml, defaults: { format: :xml }
   get "robots", to: "robots#index", as: :robots, format: :txt, defaults: { format: :txt }
