@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_locale
-    I18n.locale = request.path.start_with?("/ja") ? :ja : :en
+    I18n.locale = params[:locale] || (request.path.start_with?("/ja") ? :ja : :en)
   end
 
   def default_url_options

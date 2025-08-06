@@ -19,9 +19,4 @@ class RedirectsController < ApplicationController
     @redirect_url = "/ja/blog/#{params[:year]}/#{params[:month]}/#{params[:slug]}/"
     render :redirect, layout: false
   end
-
-  def feed_legacy
-    @redirect_url = "/ja/feed.xml"
-    render :redirect, layout: false, formats: [ :html ]
-  end
 end

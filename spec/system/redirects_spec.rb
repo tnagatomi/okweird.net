@@ -23,12 +23,4 @@ RSpec.describe "Redirects", type: :system do
       expect(page).to have_content("Agentic coding全盛のいま")
     end
   end
-
-  describe "legacy feed URL" do
-    it "redirects /index.xml to Japanese feed" do
-      visit "/index.xml"
-      # Since feeds are XML, we check that we end up at the Japanese feed URL
-      expect(page).to have_current_path("/ja/feed.xml")
-    end
-  end
 end
