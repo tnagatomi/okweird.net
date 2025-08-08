@@ -1,1 +1,9 @@
+<% content_for :title, "About | It's okay to be weird" %>
+<% content_for :head do %>
+  <meta property="og:title" content="About - It's okay to be weird">
+  <meta property="og:description" content="I'm a weird programmer who started my career as a software engineer at 30. Based in Fukuoka, Japan since 1985.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<%= request.original_url %>">
+<% end %>
+
 <%= render partial: "shared/profile" %>
