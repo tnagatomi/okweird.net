@@ -46,6 +46,16 @@ class Post < ApplicationModel
     @_published_at ||= Time.zone.parse(frontmatter["date"])
   end
 
+  def excerpt(length = 160)
+    plain_text = ActionView::Base.full_sanitizer.sanitize(content)
+    plain_text = plain_text.gsub(/\s+/, " ").strip
+    if plain_text.length > length
+      plain_text[0...length] + "..."
+    else
+      plain_text
+    end
+  end
+
   private
 
   def raw_slug

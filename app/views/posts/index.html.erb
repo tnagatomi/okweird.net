@@ -1,3 +1,11 @@
+<% content_for :title, "Blog | It's okay to be weird" %>
+<% content_for :head do %>
+  <meta property="og:title" content="Blog - It's okay to be weird">
+  <meta property="og:description" content="Writings about programming, technology, and life from a weird programmer in Fukuoka, Japan.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<%= request.original_url %>">
+<% end %>
+
 <h2>Blog</h2>
 <ul>
   <% @posts.each do |post|%>
