@@ -1,3 +1,11 @@
+<% content_for :title, "#{@post.title} | It's okay to be weird" %>
+<% content_for :head do %>
+  <meta property="og:title" content="<%= @post.title %>">
+  <meta property="og:description" content="<%= @post.excerpt %>">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="<%= request.original_url %>">
+<% end %>
+
 <h2 id="title"><%= @post.title %></h2>
 Date: <%= @post.published_at.to_date %>
 <%= @post.content%>
