@@ -1,17 +1,31 @@
 module ApplicationHelper
   def language_switch_links
-    if I18n.locale == :ja
-      content_tag(:span, class: "language-switcher") do
+    aria_label = I18n.locale == :ja ? "言語選択" : "Language selection"
+
+    content_tag(:nav, class: "language-switcher", "aria-label": aria_label) do
+      if I18n.locale == :ja
         safe_join([
-          link_to("en", switch_locale_path(:en), class: "other-lang"),
-          content_tag(:span, "ja", class: "current-lang")
+          link_to("English", switch_locale_path(:en),
+                  class: "other-lang",
+                  lang: "en",
+                  hreflang: "en",
+                  title: "英語版に切り替え"),
+          content_tag(:span, "日本語",
+                     class: "current-lang",
+                     lang: "ja",
+                     "aria-current": "true")
         ], " / ")
-      end
-    else
-      content_tag(:span, class: "language-switcher") do
+      else
         safe_join([
-          content_tag(:span, "en", class: "current-lang"),
-          link_to("ja", switch_locale_path(:ja), class: "other-lang")
+          content_tag(:span, "English",
+                     class: "current-lang",
+                     lang: "en",
+                     "aria-current": "true"),
+          link_to("日本語", switch_locale_path(:ja),
+                  class: "other-lang",
+                  lang: "ja",
+                  hreflang: "ja",
+                  title: "Switch to Japanese Version")
         ], " / ")
       end
     end

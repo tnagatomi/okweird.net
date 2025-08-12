@@ -7,7 +7,7 @@
 <% end %>
 
 <h2 id="title"><%= @post.title %></h2>
-Date: <%= @post.published_at.to_date %>
+Date: <time datetime="<%= @post.published_at.iso8601 %>"><%= @post.published_at.to_date %></time>
 <%= @post.content%>
 <hr>
 <%= render "shared/profile" %>
