@@ -5,23 +5,23 @@ RSpec.describe "Language Switching", type: :system do
     it "displays language switcher with correct links" do
       visit "/"
       within ".language-switcher" do
-        expect(page).to have_css(".current-lang", text: "en")
-        expect(page).to have_link("ja", href: "/ja/")
+        expect(page).to have_css(".current-lang", text: "English")
+        expect(page).to have_link("日本語", href: "/ja/")
       end
 
       visit "/ja/"
       within ".language-switcher" do
-        expect(page).to have_css(".current-lang", text: "ja")
-        expect(page).to have_link("en", href: "/")
+        expect(page).to have_css(".current-lang", text: "日本語")
+        expect(page).to have_link("English", href: "/")
       end
     end
 
     it "language links have correct href attributes" do
       visit "/"
-      expect(page).to have_link("ja", href: "/ja/")
+      expect(page).to have_link("日本語", href: "/ja/")
 
       visit "/ja/"
-      expect(page).to have_link("en", href: "/")
+      expect(page).to have_link("English", href: "/")
     end
 
     it "navigation links maintain language context" do
@@ -36,13 +36,13 @@ RSpec.describe "Language Switching", type: :system do
 
     it "language switcher adapts to current page" do
       visit "/posts/"
-      expect(page).to have_link("ja", href: "/ja/blog/")
+      expect(page).to have_link("日本語", href: "/ja/blog/")
 
       visit "/history/"
-      expect(page).to have_link("ja", href: "/ja/history/")
+      expect(page).to have_link("日本語", href: "/ja/history/")
 
       visit "/ja/blog/"
-      expect(page).to have_link("en", href: "/posts/")
+      expect(page).to have_link("English", href: "/posts/")
     end
   end
 

@@ -131,3 +131,25 @@ blockquote {
 .other-lang {
   margin-right: 0
 }
+
+nav a[aria-current="page"] {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.current-lang[aria-current="true"] {
+  font-weight: bold;
+}
+
+.language-switcher {
+  display: inline-block;
+}
+
+.language-switcher a:focus {
+  outline: 2px solid #3273dc;
+  outline-offset: 2px;
+}
+
+time {
+  font-weight: normal;
+}

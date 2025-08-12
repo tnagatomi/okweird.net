@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= I18n.locale %>">
   <head>
     <title><%= content_for(:title) || "It's okay to be weird" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -17,25 +17,30 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <header>
-    <a href="<%= localized_root_path %>">
-        <h1>It's okay to be weird</h1>
-    </a>
-    <nav style="display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <a href="<%= localized_root_path %>">About</a>
-          <a href="<%= localized_posts_path %>">Blog</a>
-          <a href="<%= localized_history_path %>">History</a>
-        </div>
-        <%= language_switch_links %>
-    </nav>
-  </header>
-
   <body>
-    <%= yield %>
-  </body>
+    <header>
+      <a href="<%= localized_root_path %>">
+          <h1>It's okay to be weird</h1>
+      </a>
+      <nav aria-label="メインナビゲーション" style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <a href="<%= localized_root_path %>" 
+               <%= 'aria-current="page"'.html_safe if current_page?(localized_root_path) %>>About</a>
+            <a href="<%= localized_posts_path %>" 
+               <%= 'aria-current="page"'.html_safe if current_page?(localized_posts_path) || request.path.start_with?('/posts/') || request.path.start_with?('/ja/blog/') %>>Blog</a>
+            <a href="<%= localized_history_path %>" 
+               <%= 'aria-current="page"'.html_safe if current_page?(localized_history_path) %>>History</a>
+          </div>
+          <%= language_switch_links %>
+      </nav>
+    </header>
 
-  <footer>
-    &copy; 2025 Takayuki Nagatomi. All rights reserved.
-  </footer>
+    <main id="main-content">
+      <%= yield %>
+    </main>
+
+    <footer>
+      &copy; 2025 Takayuki Nagatomi. All rights reserved.
+    </footer>
+  </body>
 </html>

@@ -10,7 +10,10 @@
 <ul>
   <% @posts.each do |post|%>
   <li>
-    <a href="<%= post_path(post) %>"><%= post.published_at.to_date %> <%= post.title %></a>
+    <a href="<%= post_path(post) %>">
+      <time datetime="<%= post.published_at.iso8601 %>"><%= post.published_at.to_date %></time>
+      <%= post.title %>
+    </a>
   </li>
   <% end %>
 </ul>
