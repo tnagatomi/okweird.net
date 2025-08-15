@@ -1,43 +1,29 @@
 Rails.application.routes.draw do
-  # English routes (default)
-  root "about#index"
+  scope "(:locale)", locale: /en|ja/ do
+    root "about#index"
 
-  get "posts", to: "posts#index", as: :posts
-  get "posts/:year/:month/:slug", to: "posts#show", as: :slugged_post, constraints: { year: /\d{4}/, month: /\d{2}/, slug: /.*/, format: /html/ }
+    get "posts", to: "posts#index", as: :posts
+    get "posts/:year/:month/:slug", to: "posts#show", as: :slugged_post, constraints: { year: /\d{4}/, month: /\d{2}/, slug: /.*/, format: /html/ }
 
-  get "history", to: "history#index", as: :history
+    get "history", to: "history#index"
 
-  # Japanese routes
-  scope ":locale", locale: /ja/ do
-    root "about#index", as: :ja_root
-
-    get "blog", to: "posts#index", as: :ja_posts
-    get "blog/:year/:month/:slug", to: "posts#show", as: :ja_slugged_post, constraints: { year: /\d{4}/, month: /\d{2}/, slug: /.*/, format: /html/ }
-
-    get "history", to: "history#index", as: :ja_history
+    get "feed", to: "feed#index", as: :feed, format: :xml, defaults: { format: :xml }
   end
 
-  # Legacy blog redirects
+  direct :post do |post, options|
+    route_for :slugged_post, { locale: I18n.locale, year: post.published_at.strftime("%Y"), month: post.published_at.strftime("%m"), slug: post.slug, trailing_slash: true }.merge(options)
+  end
+
+  # Legacy Japanese blog redirects
+  scope ":locale", locale: /ja/ do
+    get "blog",  to: "redirects#blog_index"
+    get "blog/:year/:month/:slug", to: "redirects#blog_post", constraints: { year: /\d{4}/, month: /\d{2}/, slug: /.*/, format: /html/ }
+  end
   get "blog", to: "redirects#blog_index"
   get "blog/:year/:month/:slug", to: "redirects#blog_post", constraints: { year: /\d{4}/, month: /\d{2}/, slug: /.*/ }
   get "blog/:slug", to: "redirects#index", constraints: { slug: /.*/ }
 
-  direct :post do |post, options|
-    locale = I18n.locale
-    if locale == :ja
-      route_for :ja_slugged_post, { locale: :ja, year: post.published_at.strftime("%Y"), month: post.published_at.strftime("%m"), slug: post.slug, trailing_slash: true }.merge(options)
-    else
-      route_for :slugged_post, { year: post.published_at.strftime("%Y"), month: post.published_at.strftime("%m"), slug: post.slug, trailing_slash: true }.merge(options)
-    end
-  end
-
-  # English feed
-  get "feed", to: "feed#index", as: :feed, format: :xml, defaults: { format: :xml }
-
-  # Japanese feed
-  scope ":locale", locale: /ja/ do
-    get "feed", to: "feed#index", as: :ja_feed, format: :xml, defaults: { format: :xml }
-  end
+  # Legacy Japanese feed
   get "index", to: "feed#index", format: :xml, defaults: { format: :xml, locale: :ja }
 
   get "sitemap", to: "sitemap#index", as: :sitemap, format: :xml, defaults: { format: :xml }

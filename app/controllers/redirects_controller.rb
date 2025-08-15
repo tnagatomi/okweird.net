@@ -11,12 +11,12 @@ class RedirectsController < ApplicationController
   end
 
   def blog_index
-    @redirect_url = "/ja/blog/"
+    @redirect_url = "/ja/posts/"
     render :redirect, layout: false
   end
 
   def blog_post
-    @redirect_url = "/ja/blog/#{params[:year]}/#{params[:month]}/#{params[:slug]}/"
+    @redirect_url = "/ja/posts/#{params[:year]}/#{params[:month]}/#{params[:slug]}/"
     render :redirect, layout: false
   end
 end

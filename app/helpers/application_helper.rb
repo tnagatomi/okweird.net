@@ -32,37 +32,17 @@ module ApplicationHelper
   end
 
   def switch_locale_path(locale)
-    current = request.path
+    current = request.path == "/" ? "/" : "#{request.path}/"
 
     if locale == :ja
-      return "/ja/" if current == "/"
-      return "/ja/blog/" if current == "/posts/" || current == "/posts"
-      return "/ja/history/" if current == "/history/" || current == "/history"
-      if current.match?(/^\/posts\/\d{4}\/\d{2}\//)
-        return "/ja/blog/"
-      end
-      return "/ja#{current}" unless current.start_with?("/ja/")
-      current
+      return "/ja/posts/" if current.start_with?("/en/posts")
+      return current.sub(/^\/en/, "ja") if current.start_with?("/en/")
+
+      "/ja#{current}"
     else
-      return "/" if current == "/ja/" || current == "/ja"
-      return "/posts/" if current == "/ja/blog/" || current == "/ja/blog"
-      return "/history/" if current == "/ja/history/" || current == "/ja/history"
-      if current.match?(/^\/ja\/blog\/\d{4}\/\d{2}\//)
-        return "/posts/"
-      end
+      return "/posts/" if current.start_with?("/ja/posts")
+
       current.sub(/^\/ja/, "").presence || "/"
     end
-  end
-
-  def localized_root_path
-    I18n.locale == :ja ? "/ja/" : "/"
-  end
-
-  def localized_posts_path
-    I18n.locale == :ja ? "/ja/blog/" : "/posts/"
-  end
-
-  def localized_history_path
-    I18n.locale == :ja ? "/ja/history/" : "/history/"
   end
 end
