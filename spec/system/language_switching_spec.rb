@@ -26,7 +26,7 @@ RSpec.describe "Language Switching", type: :system do
 
     it "navigation links maintain language context" do
       visit "/ja/"
-      expect(page).to have_link("Blog", href: "/ja/blog/")
+      expect(page).to have_link("Blog", href: "/ja/posts/")
       expect(page).to have_link("History", href: "/ja/history/")
 
       visit "/"
@@ -36,7 +36,7 @@ RSpec.describe "Language Switching", type: :system do
 
     it "language switcher adapts to current page" do
       visit "/posts/"
-      expect(page).to have_link("日本語", href: "/ja/blog/")
+      expect(page).to have_link("日本語", href: "/ja/posts/")
 
       visit "/history/"
       expect(page).to have_link("日本語", href: "/ja/history/")

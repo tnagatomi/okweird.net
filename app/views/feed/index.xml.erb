@@ -3,8 +3,8 @@
   <channel>
     <title>It's okay to be weird</title>
     <description>Takayuki Nagatomi's site</description>
-    <link><%= I18n.locale == :ja ? root_url(locale: :ja) : root_url %></link>
-    <atom:link href="<%= I18n.locale == :ja ? ja_feed_url(format: :xml, locale: :ja) : feed_url(format: :xml) %>" rel="self" type="application/rss+xml"/>
+    <link><%= root_url(locale: :ja) %></link>
+    <atom:link href="<%= feed_url(format: :xml) %>" rel="self" type="application/rss+xml"/>
     <pubDate><%= @posts.first.published_at.rfc822 %></pubDate>
     <lastBuildDate><%= Time.now.rfc822 %></lastBuildDate>
     <generator>Ruby on Rails</generator>

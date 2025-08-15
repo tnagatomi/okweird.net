@@ -36,6 +36,6 @@ module Okweird
                             [ :all, { "Cache-Control" => "public, max-age=15552000" } ]
                           ]
 
-    config.action_controller.default_url_options = { trailing_slash: true }
+    routes.default_url_options[:trailing_slash] = true
   end
 end
