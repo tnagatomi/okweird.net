@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   direct :post do |post, options|
-    route_for :slugged_post, { locale: I18n.locale, year: post.published_at.strftime("%Y"), month: post.published_at.strftime("%m"), slug: post.slug, trailing_slash: true }.merge(options)
+    route_for :slugged_post, { year: post.published_at.strftime("%Y"), month: post.published_at.strftime("%m"), slug: post.slug, trailing_slash: true }.merge(options)
   end
 
   # Legacy Japanese blog redirects

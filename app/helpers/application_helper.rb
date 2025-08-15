@@ -35,7 +35,7 @@ module ApplicationHelper
     current = request.path == "/" ? "/" : "#{request.path}/"
 
     if locale == :ja
-      return "/ja/posts/" if current.start_with?("/en/posts")
+      return "/ja/posts/" if current.start_with?("/en/posts") || current.start_with?("/posts")
       return current.sub(/^\/en/, "ja") if current.start_with?("/en/")
 
       "/ja#{current}"
