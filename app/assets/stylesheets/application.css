@@ -8,8 +8,6 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
- @import "vendor/rouge/_molokai.css";
-
 body {
     font-family: Verdana, sans-serif;
     margin: auto;
