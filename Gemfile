@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "parklife"
+gem "parklife-rails"
 gem "rails", "~> 8.0.2"
 
 gem "front_matter_parser"
