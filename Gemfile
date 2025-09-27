@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "parklife-rails"
-gem "rails", "~> 8.0.2"
+gem "rails", "~> 8.0.3"
 
 gem "front_matter_parser"
 gem "kramdown"
