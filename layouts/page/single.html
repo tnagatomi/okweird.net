@@ -1,0 +1,6 @@
+{{ define "main" }}
+{{- if .Params.showTitle }}
+<h2>{{ .Title }}</h2>
+{{- end }}
+{{ .Content }}
+{{ end }}
