@@ -1,3 +1,7 @@
 {{ define "main" }}
-{{- partial "profile.html" . }}
+{{- if eq .Lang "ja" }}
+  {{- partial "profile-ja.html" . }}
+{{- else }}
+  {{- partial "profile.html" . }}
+{{- end }}
 {{ end }}
