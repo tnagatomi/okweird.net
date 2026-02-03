@@ -1,0 +1,31 @@
+baseURL = "https://okweird.net/"
+languageCode = "en"
+defaultContentLanguage = "en"
+title = "It's okay to be weird"
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    codeFences = true
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+  [languages.ja]
+    languageName = "日本語"
+    weight = 2
+    contentDir = "content/ja"
+
+[permalinks]
+  posts = "/posts/:year/:month/:slug/"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[sitemap]
+  changeFreq = "weekly"
+  priority = 0.5
