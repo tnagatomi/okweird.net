@@ -4,81 +4,85 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A bilingual (Japanese/English) blog site built with Rails 8.0.2, using Parklife for static site generation and hosted on GitHub Pages.
+A bilingual (Japanese/English) blog site built with Hugo (extended version), deployed on Cloudflare Pages.
 
 ## Development Commands
 
 ### Local Development
 ```bash
-bin/rails server      # Start development server
-bin/rails console     # Rails console
+hugo server          # Start development server with live reload
+hugo server -D       # Include draft posts
 ```
 
-### Testing
+### Build
 ```bash
-bundle exec rspec                  # Run all tests
-bundle exec rspec spec/models      # Run model tests only
-bundle exec rspec spec/system      # Run system tests only
-bundle exec rspec spec/path/to/specific_spec.rb  # Run specific test file
+hugo                 # Build site to public/ directory
+hugo --minify        # Build with minification
 ```
 
-### Static Site Build
+### Create New Content
 ```bash
-bin/static-build              # Generate static site to build/ directory
-bin/parklife build            # Generate static site using Parkfile config
-```
-
-### Code Quality
-```bash
-bin/rubocop           # Lint Ruby code
-bin/rubocop -a        # Auto-fix correctable issues
-bin/brakeman          # Security scan
-bin/importmap audit   # Security check for JavaScript dependencies
+hugo new posts/slug/index.md           # New English post
+hugo new ja/posts/slug/index.md        # New Japanese post
 ```
 
 ## Architecture
 
 ### Directory Structure
-- `_posts/`: Blog post Markdown files
-  - `ja/`: Japanese posts (organized by year)
-  - `en/`: English posts
-- `_uploads/blog/`: Blog post images
-- `app/`: Rails application
-  - `models/post.rb`: Blog post model (uses FrontMatterParser)
-  - `controllers/`: Various controllers
-  - `views/`: ERB templates
+- `content/`: Content files (Markdown)
+  - `posts/`: English posts (Page Bundles)
+  - `ja/posts/`: Japanese posts (Page Bundles)
+  - `history.md`: English history page
+  - `ja/history.md`: Japanese history page
+- `layouts/`: Hugo templates
+  - `_default/`: Default templates (baseof.html, list.html, single.html)
+  - `partials/`: Reusable template parts
+  - `posts/`: Post-specific templates
+- `assets/css/`: CSS files (processed by Hugo Pipes)
+- `static/`: Static files copied as-is
+  - `_redirects`: Cloudflare Pages redirects
+  - `icon.png`: Favicon
+  - `images/`: Profile images
+- `archetypes/`: Content templates
 
 ### Key Components
 
-**Post Model** (`app/models/post.rb`)
-- Loads blog posts from Markdown files
-- Parses metadata with FrontMatterParser
-- Converts to HTML using Kramdown (GFM)
-- Determines language based on `ja/` directory presence
+**Hugo Configuration** (`hugo.toml`)
+- Multilingual setup (en default, ja)
+- Permalink structure: `/posts/:year/:month/:slug/`
+- Monokai syntax highlighting
+- RSS feed generation
 
-**Routing** (`config/routes.rb`)
-- English: `/posts/year/month/slug` (default)
-- Japanese: `/ja/blog/year/month/slug`
-- Legacy URLs (`/blog/*`) redirect to Japanese version
+**Templates**
+- `layouts/_default/baseof.html`: Base HTML structure
+- `layouts/partials/profile.html`: English profile
+- `layouts/partials/profile-ja.html`: Japanese profile (includes X, SpeakerDeck)
+- `layouts/partials/language-switcher.html`: Language toggle
 
-**Parkfile Configuration**
-- Static site generation settings
-- `nested_index: true` maintains directory structure
-- Generates posts, feeds, sitemap.xml
+**Content Organization (Page Bundles)**
+- Posts are organized as Page Bundles: `posts/YYYY/slug/index.md`
+- Images for posts are stored in the same directory
+- Front matter: title, date, slug
 
-### Internationalization
-- `ApplicationController#set_locale`: Determines language from URL path
-- English is default, `/ja` prefix for Japanese
-- Feeds: `/feed.xml` (English), `/ja/feed.xml` (Japanese)
+### URL Structure
+- English: `/posts/YYYY/MM/slug/`
+- Japanese: `/ja/posts/YYYY/MM/slug/`
+- History: `/history/`, `/ja/history/`
+- RSS: `/index.xml`, `/ja/index.xml`
+
+### Redirects
+Legacy URLs are redirected via `static/_redirects`:
+- `/blog/*` → `/ja/posts/*`
+- `/feed.xml` → `/index.xml`
 
 ## GitHub Actions
 
-**CI** (`.github/workflows/ci.yml`)
-- Security scanning (Brakeman, importmap audit)
-- Rubocop linting
-- RSpec test execution
+**Deployment** (`.github/workflows/deploy.yml`)
+- Build with Hugo extended
+- Link validation with htmltest
+- Deploy to Cloudflare Pages on main branch
 
-**Deployment** (`.github/workflows/parklife.yml`)
-- Auto-deploy on push to main branch
-- Static site generation with Parklife
-- Deploy to GitHub Pages
+## Requirements
+
+- Hugo extended version (0.142.0+)
+- Use asdf/mise with `.tool-versions`
