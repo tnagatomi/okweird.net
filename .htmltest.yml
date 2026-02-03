@@ -1,0 +1,30 @@
+# htmltest configuration
+# https://github.com/wjdp/htmltest
+
+DirectoryPath: "public"
+
+# Check external links
+CheckExternal: true
+
+# Ignore external link errors (useful during migration)
+IgnoreURLs:
+  - "https://x.com/.*"
+  - "https://twitter.com/.*"
+
+# Check internal links
+CheckInternal: true
+
+# Check mailto links
+CheckMailto: false
+
+# Check tel links
+CheckTel: false
+
+# Check favicon
+CheckFavicon: true
+
+# Ignore directories
+IgnoreDirectoryMissing: true
+
+# Timeout for external requests (in seconds)
+ExternalTimeout: 15
