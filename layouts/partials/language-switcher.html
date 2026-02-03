@@ -1,0 +1,23 @@
+<div class="language-switcher">
+  {{- $translations := .Translations }}
+  {{- $currentLang := .Lang }}
+  {{- if eq $currentLang "en" }}
+    <span class="current-lang" aria-current="true">EN</span> |
+    {{- if $translations }}
+      {{- range $translations }}
+        <a href="{{ .Permalink }}" class="other-lang">JA</a>
+      {{- end }}
+    {{- else }}
+      <a href="/ja/" class="other-lang">JA</a>
+    {{- end }}
+  {{- else }}
+    {{- if $translations }}
+      {{- range $translations }}
+        <a href="{{ .Permalink }}" class="other-lang">EN</a>
+      {{- end }}
+    {{- else }}
+      <a href="/" class="other-lang">EN</a>
+    {{- end }}
+    | <span class="current-lang" aria-current="true">JA</span>
+  {{- end }}
+</div>

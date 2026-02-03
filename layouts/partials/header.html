@@ -1,0 +1,21 @@
+<header>
+  <a href="{{ if eq .Lang "ja" }}/ja/{{ else }}/{{ end }}">
+    <h1>It's okay to be weird</h1>
+  </a>
+  <nav aria-label="Main navigation" style="display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      {{- $rootPath := "/" }}
+      {{- $postsPath := "/posts/" }}
+      {{- $historyPath := "/history/" }}
+      {{- if eq .Lang "ja" }}
+        {{- $rootPath = "/ja/" }}
+        {{- $postsPath = "/ja/posts/" }}
+        {{- $historyPath = "/ja/history/" }}
+      {{- end }}
+      <a href="{{ $rootPath }}"{{ if eq .RelPermalink $rootPath }} aria-current="page"{{ end }}>About</a>
+      <a href="{{ $postsPath }}"{{ if hasPrefix .RelPermalink $postsPath }} aria-current="page"{{ end }}>Blog</a>
+      <a href="{{ $historyPath }}"{{ if eq .RelPermalink $historyPath }} aria-current="page"{{ end }}>History</a>
+    </div>
+    {{- partial "language-switcher.html" . }}
+  </nav>
+</header>

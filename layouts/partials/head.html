@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<title>{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+
+{{- $description := "" }}
+{{- if .Description }}
+  {{- $description = .Description }}
+{{- else if .IsPage }}
+  {{- $description = .Summary | plainify | truncate 160 }}
+{{- else }}
+  {{- $description = site.Title }}
+{{- end }}
+
+<meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ site.Title }}{{ end }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+
+<link rel="icon" href="/icon.png" type="image/png">
+<link rel="apple-touch-icon" href="/icon.png">
+
+{{- $css := resources.Get "css/main.css" }}
+<link rel="stylesheet" href="{{ $css.Permalink }}">
