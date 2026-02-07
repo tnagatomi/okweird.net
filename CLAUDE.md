@@ -55,8 +55,7 @@ hugo new ja/posts/slug/index.md        # New Japanese post
 
 **Templates**
 - `layouts/_default/baseof.html`: Base HTML structure
-- `layouts/partials/profile.html`: English profile
-- `layouts/partials/profile-ja.html`: Japanese profile (includes X, SpeakerDeck)
+- `layouts/partials/profile.html`: Profile partial with language-aware content
 - `layouts/partials/language-switcher.html`: Language toggle
 
 **Content Organization (Page Bundles)**
@@ -79,7 +78,6 @@ Legacy URLs are redirected via `static/_redirects`:
 
 **Deployment** (`.github/workflows/deploy.yml`)
 - Build with Hugo extended
-- Link validation with htmltest
 - Deploy to Cloudflare Pages on main branch
 
 ## Requirements
