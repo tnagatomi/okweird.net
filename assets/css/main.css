@@ -133,7 +133,7 @@ nav a[aria-current="page"] {
   display: inline-block;
 }
 
-.language-switcher a:focus {
+a:focus {
   outline: 2px solid #3273dc;
   outline-offset: 2px;
 }
