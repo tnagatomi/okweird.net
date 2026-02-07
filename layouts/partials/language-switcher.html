@@ -11,9 +11,16 @@
     {{- if eq .Lang $currentLang }}
       <span class="current-lang" aria-current="true">{{ .LanguageName }}</span>
     {{- else }}
-      {{- $href := index $translationMap .Lang }}
+      {{- $targetLang := .Lang }}
+      {{- $href := index $translationMap $targetLang }}
       {{- if not $href }}
-        {{- $href = "" | relLangURL }}
+        {{- range site.Sites }}
+          {{- if eq .Language.Lang $targetLang }}
+            {{- with .GetPage "/posts" }}
+              {{- $href = .RelPermalink }}
+            {{- end }}
+          {{- end }}
+        {{- end }}
       {{- end }}
       <a href="{{ $href }}" class="other-lang">{{ .LanguageName }}</a>
     {{- end }}
