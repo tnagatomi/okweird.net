@@ -33,7 +33,12 @@ a.active {
     font-weight: bolder;
     text-decoration: underline;
 }
-a h1 {
+.site-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0.67em 0;
+}
+.site-title a {
     color: #000;
 }
 .main-nav {
@@ -88,8 +93,11 @@ blockquote {
     width: 48px;
 }
 
-.profile-name h2 {
+.profile-name p {
     margin: 0.5rem 0 0.5rem 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #222;
 }
 
 .profile-body p {

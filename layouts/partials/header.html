@@ -2,9 +2,11 @@
   {{- $rootPath := "" | relLangURL }}
   {{- $postsPath := "posts/" | relLangURL }}
   {{- $historyPath := "history/" | relLangURL }}
-  <a href="{{ $rootPath }}">
-    <h1>It's okay to be weird</h1>
-  </a>
+  {{- if .IsHome }}
+  <h1 class="site-title"><a href="{{ $rootPath }}">It's okay to be weird</a></h1>
+  {{- else }}
+  <p class="site-title"><a href="{{ $rootPath }}">It's okay to be weird</a></p>
+  {{- end }}
   <nav aria-label="Main navigation" class="main-nav">
     <div>
       <a href="{{ $rootPath }}"{{ if eq .RelPermalink $rootPath }} aria-current="page"{{ end }}>About</a>

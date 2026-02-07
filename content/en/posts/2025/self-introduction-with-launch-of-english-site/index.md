@@ -8,19 +8,19 @@ I've launched an English version of my site, in addition to my Japanese one.
 
 Let me tell you why I launched an English site, and let me introduce myself a little bit.
 
-### How my site runs
+## How my site runs
 
 My site runs on Ruby on Rails with Parklife, which can statically build Rack-based apps. I used to use Hugo, but migrated to this combination after being inspired by Ben Sheldon's post: [Living Parklife with Rails, coming from Jekyll \| Island94.org](https://island94.org/2025/01/living-parklife-with-rails-coming-from-jekyll).  
 Thanks to Rails, internationalizing the site was somewhat straightforward.
 
-### Why an English site
+## Why an English site
 
 Why launch an English site?
 
 Well, I started posting on Bluesky in English after what happened to Twitter, and was able to gain followers from outside Japan.  
 I wanted to do the same with my site.
 
-### My self-introduction
+## My self-introduction
 
 Let me introduce myself.
 
@@ -42,7 +42,7 @@ I also like Go for its simplicity and made some tools with it.
 As for my personal life, I'm a husband and father of two. My family is the most precious thing and purpose in my life.  
 I couldn't believe this happy situation when I was hikikomori in my dark room. Life is strange...
 
-### Conclusion
+## Conclusion
 
 I'm happy you took an interest in me and read this far.
 
