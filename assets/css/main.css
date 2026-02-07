@@ -146,8 +146,8 @@ nav a[aria-current="page"] {
   display: inline-block;
 }
 
-a:focus {
-  outline: 2px solid #2654a3;
+a:focus-visible {
+  outline: 2px solid #000;
   outline-offset: 2px;
 }
 
