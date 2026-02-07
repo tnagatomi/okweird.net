@@ -20,6 +20,12 @@
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:locale" content="{{ if eq .Lang "ja" }}ja_JP{{ else }}en_US{{ end }}">
+{{- if .IsPage }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+{{- with .Lastmod }}
+<meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+{{- end }}
+{{- end }}
 
 <link rel="canonical" href="{{ .Permalink }}">
 {{- if .IsTranslated }}
