@@ -36,6 +36,11 @@ a.active {
 a h1 {
     color: #000;
 }
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 nav a {
     margin-right: 10px;
 }
