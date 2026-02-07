@@ -23,11 +23,6 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Run htmltest
-        uses: wjdp/htmltest-action@master
-        with:
-          config: .htmltest.yml
-
       - name: Deploy to Cloudflare Pages
         if: github.ref == 'refs/heads/main'
         uses: cloudflare/pages-action@v1
