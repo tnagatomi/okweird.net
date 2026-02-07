@@ -3,7 +3,7 @@
   {{- $translations := .Translations }}
   {{- $translationMap := dict }}
   {{- range $translations }}
-    {{- $translationMap = merge $translationMap (dict .Lang .Permalink) }}
+    {{- $translationMap = merge $translationMap (dict .Lang .RelPermalink) }}
   {{- end }}
   {{- $first := true }}
   {{- range site.Languages }}
@@ -13,7 +13,7 @@
     {{- else }}
       {{- $href := index $translationMap .Lang }}
       {{- if not $href }}
-        {{- $href = "" | absLangURL }}
+        {{- $href = "" | relLangURL }}
       {{- end }}
       <a href="{{ $href }}" class="other-lang">{{ .LanguageName }}</a>
     {{- end }}
