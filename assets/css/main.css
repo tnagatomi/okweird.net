@@ -27,7 +27,7 @@ b {
 }
 a {
     text-decoration: none;
-    color: #3273dc;
+    color: #2654a3;
 }
 a.active {
     font-weight: bolder;
@@ -139,7 +139,7 @@ nav a[aria-current="page"] {
 }
 
 a:focus {
-  outline: 2px solid #3273dc;
+  outline: 2px solid #2654a3;
   outline-offset: 2px;
 }
 
@@ -152,7 +152,7 @@ time {
   top: -100%;
   left: 0;
   padding: 0.5rem 1rem;
-  background-color: #3273dc;
+  background-color: #2654a3;
   color: #fff;
   z-index: 100;
 }
