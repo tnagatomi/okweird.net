@@ -1,5 +1,6 @@
 <div class="profile">
-    <img src="/images/tnagatomi.png" alt="Takayuki Nagatomi" class="profile-icon">
+    {{- $img := resources.Get "images/tnagatomi.png" }}
+    <img src="{{ $img.RelPermalink }}" alt="Takayuki Nagatomi" class="profile-icon" width="{{ $img.Width }}" height="{{ $img.Height }}">
     <div class="profile-name"><h2>Takayuki Nagatomi (永冨 隆之)</h2></div>
 </div>
 <div class="profile-body">
