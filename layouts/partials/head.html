@@ -22,6 +22,13 @@
 <meta property="og:locale" content="{{ if eq .Lang "ja" }}ja_JP{{ else }}en_US{{ end }}">
 
 <link rel="canonical" href="{{ .Permalink }}">
+{{- if .IsTranslated }}
+{{- range .Translations }}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+{{- end }}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+{{- end }}
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
 {{- with .OutputFormats.Get "RSS" }}
 <link rel="alternate" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ site.Title }}">
 {{- end }}
