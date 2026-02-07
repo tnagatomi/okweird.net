@@ -3,9 +3,5 @@
 Date: <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
 {{ .Content }}
 <hr>
-{{- if eq .Lang "ja" }}
-  {{- partial "profile-ja.html" . }}
-{{- else }}
-  {{- partial "profile.html" . }}
-{{- end }}
+{{- partial "profile.html" . }}
 {{ end }}

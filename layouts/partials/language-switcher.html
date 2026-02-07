@@ -2,22 +2,24 @@
   {{- $translations := .Translations }}
   {{- $currentLang := .Lang }}
   {{- if eq $currentLang "en" }}
-    <span class="current-lang" aria-current="true">EN</span> |
+    <span class="current-lang" aria-current="true">English</span>
+    <span aria-hidden="true">|</span>
     {{- if $translations }}
       {{- range $translations }}
-        <a href="{{ .Permalink }}" class="other-lang">JA</a>
+        <a href="{{ .Permalink }}" class="other-lang">日本語</a>
       {{- end }}
     {{- else }}
-      <a href="/ja/" class="other-lang">JA</a>
+      <a href="/ja/" class="other-lang">日本語</a>
     {{- end }}
   {{- else }}
     {{- if $translations }}
       {{- range $translations }}
-        <a href="{{ .Permalink }}" class="other-lang">EN</a>
+        <a href="{{ .Permalink }}" class="other-lang">English</a>
       {{- end }}
     {{- else }}
-      <a href="/" class="other-lang">EN</a>
+      <a href="/" class="other-lang">English</a>
     {{- end }}
-    | <span class="current-lang" aria-current="true">JA</span>
+    <span aria-hidden="true">|</span>
+    <span class="current-lang" aria-current="true">日本語</span>
   {{- end }}
 </div>
