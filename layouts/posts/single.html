@@ -1,7 +1,11 @@
 {{ define "main" }}
-<h1 id="title">{{ .Title }}</h1>
-<div class="post-metadata"><span class="date-label">Date:</span> <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time></div>
-{{ .Content }}
+<article>
+  <h1 id="title">{{ .Title }}</h1>
+  <div class="post-metadata"><span class="date-label">Date:</span> <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time></div>
+  {{ .Content }}
+</article>
 <hr>
-{{- partial "profile.html" . }}
+<aside aria-label="{{ if eq .Lang "ja" }}著者プロフィール{{ else }}Author profile{{ end }}">
+  {{- partial "profile.html" . }}
+</aside>
 {{ end }}
