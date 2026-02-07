@@ -141,3 +141,18 @@ nav a[aria-current="page"] {
 time {
   font-weight: normal;
 }
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 0.5rem 1rem;
+  background-color: #3273dc;
+  color: #fff;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+  color: #fff;
+}
