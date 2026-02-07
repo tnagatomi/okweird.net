@@ -1,4 +1,4 @@
-<div class="language-switcher">
+<nav aria-label="{{ if eq .Lang "ja" }}言語切替{{ else }}Language{{ end }}" class="language-switcher">
   {{- $currentLang := .Lang }}
   {{- $translations := .Translations }}
   {{- $translationMap := dict }}
@@ -19,4 +19,4 @@
     {{- end }}
     {{- $first = false }}
   {{- end }}
-</div>
+</nav>
