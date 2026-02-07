@@ -165,7 +165,7 @@ time {
   z-index: 100;
 }
 
-.skip-link:focus {
+.skip-link:focus-visible {
   top: 0;
   color: #fff;
 }
