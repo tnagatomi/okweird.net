@@ -13,6 +13,8 @@
   {{- $description = site.Title }}
 {{- end }}
 
+<meta name="description" content="{{ $description }}">
+
 <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ site.Title }}{{ end }}">
 <meta property="og:description" content="{{ $description }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
