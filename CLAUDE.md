@@ -22,7 +22,7 @@ hugo --minify        # Build with minification
 
 ### Create New Content
 ```bash
-hugo new posts/slug/index.md           # New English post
+hugo new en/posts/slug/index.md        # New English post
 hugo new ja/posts/slug/index.md        # New Japanese post
 ```
 
@@ -30,9 +30,9 @@ hugo new ja/posts/slug/index.md        # New Japanese post
 
 ### Directory Structure
 - `content/`: Content files (Markdown)
-  - `posts/`: English posts (Page Bundles)
+  - `en/posts/`: English posts (Page Bundles)
+  - `en/history.md`: English history page
   - `ja/posts/`: Japanese posts (Page Bundles)
-  - `history.md`: English history page
   - `ja/history.md`: Japanese history page
 - `layouts/`: Hugo templates
   - `_default/`: Default templates (baseof.html, list.html, single.html)
