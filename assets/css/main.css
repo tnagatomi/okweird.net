@@ -27,7 +27,7 @@ b {
 }
 a {
     text-decoration: none;
-    color: #2654a3;
+    color: #1a4480;
 }
 a.active {
     font-weight: bolder;
@@ -160,7 +160,7 @@ time {
   top: -100%;
   left: 0;
   padding: 0.5rem 1rem;
-  background-color: #2654a3;
+  background-color: #1a4480;
   color: #fff;
   z-index: 100;
 }
