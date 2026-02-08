@@ -1,0 +1,18 @@
+<header>
+  {{- $rootPath := "" | relLangURL }}
+  {{- $postsPath := "posts/" | relLangURL }}
+  {{- $historyPath := "history/" | relLangURL }}
+  {{- if .IsHome }}
+  <h1 class="site-title"><a href="{{ $rootPath }}">{{ site.Title }}</a></h1>
+  {{- else }}
+  <p class="site-title"><a href="{{ $rootPath }}">{{ site.Title }}</a></p>
+  {{- end }}
+  <nav aria-label="Main navigation" class="main-nav">
+    <div>
+      <a href="{{ $rootPath }}"{{ if eq .RelPermalink $rootPath }} aria-current="page"{{ end }}>About</a>
+      <a href="{{ $postsPath }}"{{ if hasPrefix .RelPermalink $postsPath }} aria-current="page"{{ end }}>Blog</a>
+      <a href="{{ $historyPath }}"{{ if eq .RelPermalink $historyPath }} aria-current="page"{{ end }}>History</a>
+    </div>
+    {{- partial "language-switcher.html" . }}
+  </nav>
+</header>

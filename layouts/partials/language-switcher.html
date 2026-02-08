@@ -1,0 +1,29 @@
+<nav aria-label="{{ if eq .Lang "ja" }}言語切替{{ else }}Language{{ end }}" class="language-switcher">
+  {{- $currentLang := .Lang }}
+  {{- $translations := .Translations }}
+  {{- $translationMap := dict }}
+  {{- range $translations }}
+    {{- $translationMap = merge $translationMap (dict .Lang .RelPermalink) }}
+  {{- end }}
+  {{- $first := true }}
+  {{- range site.Languages }}
+    {{- if not $first }} <span aria-hidden="true">|</span> {{ end }}
+    {{- if eq .Lang $currentLang }}
+      <span class="current-lang" aria-current="true">{{ .LanguageName }}</span>
+    {{- else }}
+      {{- $targetLang := .Lang }}
+      {{- $href := index $translationMap $targetLang }}
+      {{- if not $href }}
+        {{- range site.Sites }}
+          {{- if eq .Language.Lang $targetLang }}
+            {{- with .GetPage "/posts" }}
+              {{- $href = .RelPermalink }}
+            {{- end }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
+      <a href="{{ $href }}" class="other-lang" lang="{{ .Lang }}">{{ .LanguageName }}</a>
+    {{- end }}
+    {{- $first = false }}
+  {{- end }}
+</nav>

@@ -1,0 +1,51 @@
+# Legacy blog index redirects
+/blog                           /ja/posts/     301
+/ja/blog                        /ja/posts/     301
+
+# Legacy blog post patterns (YYYY/MM/slug format)
+/blog/:year/:month/:slug        /ja/posts/:year/:month/:slug/  301
+/ja/blog/:year/:month/:slug     /ja/posts/:year/:month/:slug/  301
+
+# Legacy RSS feeds
+/feed.xml                       /index.xml     301
+/ja/feed.xml                    /ja/index.xml  301
+
+# Individual slug redirects for Japanese posts (short URLs without date)
+/blog/php-conference-fukuoka-2018       /ja/posts/2019/06/php-conference-fukuoka-2018/  301
+/blog/php-conference-fukuoka-2019       /ja/posts/2019/07/php-conference-fukuoka-2019/  301
+/blog/resolution-2021                   /ja/posts/2021/01/resolution-2021/  301
+/blog/remote-work                       /ja/posts/2021/01/remote-work/  301
+/blog/kimaben-2021                      /ja/posts/2021/02/kimaben-2021/  301
+/blog/upgrade-to-gatsby-v3              /ja/posts/2021/03/upgrade-to-gatsby-v3/  301
+/blog/write-web-app-with-string-will    /ja/posts/2021/04/write-web-app-with-string-will/  301
+/blog/getting-started-with-web-app      /ja/posts/2021/04/getting-started-with-web-app/  301
+/blog/prefer-everyday-quality           /ja/posts/2021/05/prefer-everyday-quality/  301
+/blog/isucon11                          /ja/posts/2021/08/isucon11/  301
+/blog/revise-environment                /ja/posts/2021/09/revise-environment/  301
+/blog/2021-winter-vacation              /ja/posts/2021/11/2021-winter-vacation/  301
+/blog/first-go-oss-product              /ja/posts/2021/12/first-go-oss-product/  301
+/blog/year-in-review-2021               /ja/posts/2021/12/year-in-review-2021/  301
+/blog/resolution-2022                   /ja/posts/2022/01/resolution-2022/  301
+/blog/got-married                       /ja/posts/2022/01/got-married/  301
+/blog/2022-01                           /ja/posts/2022/02/2022-01/  301
+/blog/2022-02                           /ja/posts/2022/03/2022-02/  301
+/blog/clean-coder                       /ja/posts/2022/04/clean-coder/  301
+/blog/reconsider-routines               /ja/posts/2022/04/reconsider-routines/  301
+/blog/math-as-lifetime-hobby            /ja/posts/2022/09/math-as-lifetime-hobby/  301
+/blog/speedrun-shootemup-programming    /ja/posts/2022/11/speedrun-shootemup-programming/  301
+/blog/migrated-to-astro                 /ja/posts/2022/12/migrated-to-astro/  301
+/blog/powerful-go-cli-app               /ja/posts/2022/12/powerful-go-cli-app/  301
+/blog/year-in-review-2022               /ja/posts/2022/12/year-in-review-2022/  301
+/blog/resolution-2023                   /ja/posts/2023/01/resolution-2023/  301
+/blog/notion-2-sb                       /ja/posts/2023/01/notion-2-sb/  301
+/blog/recent-state-2023-june            /ja/posts/2023/06/recent-state-2023-june/  301
+/blog/atomic-habits                     /ja/posts/2023/08/atomic-habits/  301
+/blog/eloquent-ruby                     /ja/posts/2023/09/eloquent-ruby/  301
+/blog/skill-up-along-with-childcare     /ja/posts/2023/09/skill-up-along-with-childcare/  301
+/blog/migrated-to-hugo                  /ja/posts/2023/12/migrated-to-hugo/  301
+/blog/introduction-to-rbs               /ja/posts/2023/12/introduction-to-rbs/  301
+/blog/kaigi-on-rails-2024               /ja/posts/2024/10/kaigi-on-rails-2024/  301
+/blog/interactive-debug-in-ruby         /ja/posts/2024/12/interactive-debug-in-ruby/  301
+/blog/static-build-rails-app-with-parklife      /ja/posts/2025/07/static-build-rails-app-with-parklife/  301
+/blog/how-i-abandoned-claude-code-generated-oss /ja/posts/2025/08/how-i-abandoned-claude-code-generated-oss/  301
+/blog/my-dev-environment-2026           /ja/posts/2026/01/my-dev-environment-2026/  301
