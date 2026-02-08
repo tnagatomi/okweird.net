@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A bilingual (Japanese/English) blog site built with Hugo (extended version), deployed on Cloudflare Pages.
+A bilingual (Japanese/English) blog site built with Hugo (extended version), deployed on Cloudflare Workers (Static Assets).
 
 ## Development Commands
 
@@ -40,9 +40,8 @@ hugo new ja/posts/slug/index.md        # New Japanese post
   - `posts/`: Post-specific templates
 - `assets/css/`: CSS files (processed by Hugo Pipes)
 - `static/`: Static files copied as-is
-  - `_redirects`: Cloudflare Pages redirects
+  - `_redirects`: Cloudflare Workers redirects
   - `icon.png`: Favicon
-  - `images/`: Profile images
 - `archetypes/`: Content templates
 
 ### Key Components
@@ -74,13 +73,19 @@ Legacy URLs are redirected via `static/_redirects`:
 - `/blog/*` → `/ja/posts/*`
 - `/feed.xml` → `/index.xml`
 
-## GitHub Actions
+## Deployment
 
-**Deployment** (`.github/workflows/deploy.yml`)
+**Wrangler Configuration** (`wrangler.toml`)
+- Cloudflare Workers Static Assets
+- Static files served from `./public`
+
+**GitHub Actions** (`.github/workflows/deploy.yml`)
 - Build with Hugo extended
-- Deploy to Cloudflare Pages on main branch
+- Deploy to Cloudflare Workers on main branch push
+- Preview deployment on pull requests via `wrangler versions upload`
 
 ## Requirements
 
 - Hugo extended version (0.155.2, pinned in `.tool-versions`)
 - Use asdf/mise with `.tool-versions`
+- Wrangler v4 (used in CI via `cloudflare/wrangler-action`)
