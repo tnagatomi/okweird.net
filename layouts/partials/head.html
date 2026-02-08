@@ -34,7 +34,7 @@
 {{- end }}
 <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
 {{- end }}
-<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+<link rel="alternate" hreflang="x-default" href="{{ (index .AllTranslations 0).Permalink }}">
 {{- with .OutputFormats.Get "RSS" }}
 <link rel="alternate" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ site.Title }}">
 {{- end }}
