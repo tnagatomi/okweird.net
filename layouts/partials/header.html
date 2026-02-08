@@ -3,9 +3,9 @@
   {{- $postsPath := "posts/" | relLangURL }}
   {{- $historyPath := "history/" | relLangURL }}
   {{- if .IsHome }}
-  <h1 class="site-title"><a href="{{ $rootPath }}">It's okay to be weird</a></h1>
+  <h1 class="site-title"><a href="{{ $rootPath }}">{{ site.Title }}</a></h1>
   {{- else }}
-  <p class="site-title"><a href="{{ $rootPath }}">It's okay to be weird</a></p>
+  <p class="site-title"><a href="{{ $rootPath }}">{{ site.Title }}</a></p>
   {{- end }}
   <nav aria-label="Main navigation" class="main-nav">
     <div>
