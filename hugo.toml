@@ -2,6 +2,7 @@ baseURL = "https://okweird.net/"
 languageCode = "en"
 defaultContentLanguage = "en"
 title = "It's okay to be weird"
+enableRobotsTXT = true
 
 [markup]
   [markup.highlight]
