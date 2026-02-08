@@ -1,5 +1,5 @@
 {{ define "main" }}
-<h1>Blog</h1>
+<h1>{{ .Title }}</h1>
 <ul aria-label="{{ if eq .Lang "ja" }}ブログ記事一覧{{ else }}Blog posts{{ end }}">
   {{- range .Pages.ByDate.Reverse }}
   <li>
