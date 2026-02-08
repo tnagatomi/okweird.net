@@ -29,6 +29,10 @@ a {
     text-decoration: none;
     color: #1a4480;
 }
+a:hover,
+a:focus-visible {
+    text-decoration: underline;
+}
 .site-title {
     font-size: 2em;
     font-weight: bold;
