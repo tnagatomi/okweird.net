@@ -22,7 +22,7 @@
           {{- end }}
         {{- end }}
       {{- end }}
-      <a href="{{ $href }}" class="other-lang">{{ .LanguageName }}</a>
+      <a href="{{ $href }}" class="other-lang" lang="{{ .Lang }}">{{ .LanguageName }}</a>
     {{- end }}
     {{- $first = false }}
   {{- end }}
