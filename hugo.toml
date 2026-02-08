@@ -8,7 +8,7 @@ title = "It's okay to be weird"
     style = "monokai"
     codeFences = true
   [markup.goldmark.renderer]
-    unsafe = true
+    unsafe = false
 
 [languages]
   [languages.en]

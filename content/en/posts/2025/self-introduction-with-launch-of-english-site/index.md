@@ -26,7 +26,7 @@ Let me introduce myself.
 
 I'm a 40-year-old man as of August 2025, and I've kind of lived quite a unique life. That's why I call myself "weird programmer".
 
-Like I wrote on <a href="/history/">history</a> page, I dropped out of high school at 16 and became a shut-in, never leaving my parents' house for almost 10 years. It is called <a href="https://en.wikipedia.org/wiki/Hikikomori">hikikomori</a> in Japan and it has been a serious social problem even for now.  
+Like I wrote on [history](/history/) page, I dropped out of high school at 16 and became a shut-in, never leaving my parents' house for almost 10 years. It is called [hikikomori](https://en.wikipedia.org/wiki/Hikikomori) in Japan and it has been a serious social problem even for now.  
 I played tons of video games in English during that time and that made me somewhat fluent in English.
 
 With the help of a support worker my parents brought, I was finally able to leave the house.  
