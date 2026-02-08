@@ -142,6 +142,12 @@ nav a[aria-current="page"] {
   outline-offset: 2px;
 }
 
+.post-metadata {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
 time {
   font-weight: normal;
 }
