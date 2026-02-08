@@ -65,7 +65,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          wranglerVersion: '4'
+          wranglerVersion: '4.63.0'
 
       - name: Preview deployment
         if: github.event_name == 'pull_request'
@@ -73,5 +73,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          wranglerVersion: '4'
+          wranglerVersion: '4.63.0'
           command: versions upload
