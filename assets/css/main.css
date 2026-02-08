@@ -1,7 +1,7 @@
 body {
     font-family: Verdana, sans-serif;
     margin: auto;
-    padding: 20px;
+    padding: 1.25rem;
     max-width: 84ch;
     text-align: left;
     background-color: #fff;
@@ -9,10 +9,10 @@ body {
     color: #444;
 }
 header {
-    margin: 0 0 2em;
+    margin: 0 0 2rem;
 }
 footer {
-    padding: 25px;
+    padding: 1.5rem;
     text-align: center;
 }
 h1,
@@ -29,14 +29,10 @@ a {
     text-decoration: none;
     color: #1a4480;
 }
-a.active {
-    font-weight: bolder;
-    text-decoration: underline;
-}
 .site-title {
     font-size: 2em;
     font-weight: bold;
-    margin: 0.67em 0;
+    margin: 0.67rem 0;
 }
 .site-title a {
     color: #000;
@@ -47,7 +43,7 @@ a.active {
     align-items: center;
 }
 nav a {
-    margin-right: 10px;
+    margin-right: 0.625rem;
 }
 table {
     width: 100%;
@@ -84,6 +80,7 @@ blockquote {
     margin-right: 1rem;
     margin-bottom: 0;
     width: 48px;
+    height: auto;
 }
 
 .profile-name p {
@@ -140,7 +137,7 @@ nav a[aria-current="page"] {
   display: inline-block;
 }
 
-a:focus-visible {
+:focus-visible {
   outline: 2px solid #000;
   outline-offset: 2px;
 }
@@ -162,4 +159,11 @@ time {
 .skip-link:focus-visible {
   top: 0;
   color: #fff;
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 }
