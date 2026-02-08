@@ -82,5 +82,5 @@ Legacy URLs are redirected via `static/_redirects`:
 
 ## Requirements
 
-- Hugo extended version (0.155.0, pinned in `.tool-versions`)
+- Hugo extended version (0.155.2, pinned in `.tool-versions`)
 - Use asdf/mise with `.tool-versions`

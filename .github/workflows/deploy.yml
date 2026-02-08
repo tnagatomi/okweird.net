@@ -6,7 +6,7 @@ on:
   pull_request:
 
 env:
-  HUGO_VERSION: '0.155.0'
+  HUGO_VERSION: '0.155.2'
 
 jobs:
   build-and-deploy:
