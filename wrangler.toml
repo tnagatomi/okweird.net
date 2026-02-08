@@ -1,0 +1,7 @@
+name = "okweird-net"
+compatibility_date = "2026-02-08"
+preview_urls = true
+
+[assets]
+directory = "./public"
+not_found_handling = "404-page"
