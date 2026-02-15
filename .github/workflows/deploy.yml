@@ -10,7 +10,7 @@ defaults:
     shell: bash
 
 env:
-  HUGO_VERSION: '0.155.2'
+  HUGO_VERSION: '0.155.3'
 
 jobs:
   build-and-deploy:
