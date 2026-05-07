@@ -86,6 +86,6 @@ Legacy URLs are redirected via `static/_redirects`:
 
 ## Requirements
 
-- Hugo extended version (pinned in `.tool-versions`)
-- Use asdf/mise with `.tool-versions`
+- Hugo extended version (pinned in `mise.toml`)
+- Use mise with `mise.toml`
 - Wrangler v4 (used in CI via `cloudflare/wrangler-action`)
